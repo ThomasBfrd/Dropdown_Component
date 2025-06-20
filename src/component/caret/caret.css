@@ -1,0 +1,19 @@
+.dropdown-icon {
+  transform: rotate(180deg);
+  height: 10px;
+  width: 10px;
+}
+
+.caret {
+  fill: var(--dropdown-button-text-primary);
+}
+
+.dropdown-button:hover .caret {
+  fill: var(--dropdown-button-text-secondary);
+}
+
+.opened .caret {
+  fill: var(--dropdown-button-text-secondary);
+}
+
+/*# sourceMappingURL=caret.css.map */
