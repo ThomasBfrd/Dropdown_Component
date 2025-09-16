@@ -143,6 +143,7 @@ const Dropdown = ({
                                     key={index}
                                     onClick={() => handleSetDropdownItemSelected(option)}
                                     ref={option.value === dropdownItemSelected ? dropdownItemRef : null}
+
                                 >
                                     {option.label}
                                 </div>
