@@ -104,7 +104,7 @@ const Dropdown = ({
         setOptionsFiltered([]);
 
         if (onDropdownItemSelected) {
-            onDropdownItemSelected(option.label);
+            onDropdownItemSelected(option.value as string);
         }
     }
 
@@ -139,10 +139,11 @@ const Dropdown = ({
                         <div className="dropdown-content">
                             {optionsFiltered && optionsFiltered.map((option: DropdownItemProps, index: number) => (
                                 <div
-                                    className={dropdownItemSelected && dropdownItemSelected === option.label ? 'dropdown-item selected' : 'dropdown-item'}
+                                    className={dropdownItemSelected && dropdownItemSelected === option.value ? 'dropdown-item selected' : 'dropdown-item'}
                                     key={index}
                                     onClick={() => handleSetDropdownItemSelected(option)}
-                                    ref={option.label === dropdownItemSelected ? dropdownItemRef : null}
+                                    ref={option.value === dropdownItemSelected ? dropdownItemRef : null}
+
                                 >
                                     {option.label}
                                 </div>
@@ -152,7 +153,7 @@ const Dropdown = ({
                 ) : (
                     <div className={isDropdownOpened ? "dropdown-button opened" : "dropdown-button"}
                          onClick={() => setIsDropdownOpened(!isDropdownOpened)}>
-                        <p>{dropdownItemSelected ? dropdownItemSelected as unknown as string : placeholder}</p>
+                        <p>{dropdownItemSelected ? dropdownItemSelected : placeholder}</p>
                         <Caret/>
                     </div>
                 )}
