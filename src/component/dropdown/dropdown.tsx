@@ -139,11 +139,10 @@ const Dropdown = ({
                         <div className="dropdown-content">
                             {optionsFiltered && optionsFiltered.map((option: DropdownItemProps, index: number) => (
                                 <div
-                                    className={dropdownItemSelected && dropdownItemSelected === option.value ? 'dropdown-item selected' : 'dropdown-item'}
+                                    className={dropdownItemSelected && dropdownItemSelected === option.label ? 'dropdown-item selected' : 'dropdown-item'}
                                     key={index}
                                     onClick={() => handleSetDropdownItemSelected(option)}
-                                    ref={option.value === dropdownItemSelected ? dropdownItemRef : null}
-
+                                    ref={option.label === dropdownItemSelected ? dropdownItemRef : null}
                                 >
                                     {option.label}
                                 </div>
